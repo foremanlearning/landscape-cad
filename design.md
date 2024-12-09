@@ -1,192 +1,81 @@
-# Garden and Landscape CAD Designer
+# Landscape CAD Project Plan
 
 ## Overview
 A professional-grade CAD system specifically designed for garden and landscape planning, allowing users to create detailed outdoor space designs with multiple layers and accurate measurements.
 
-## Core Features
-
-### Layer System
-1. **Base Layers**
-   - Ground Layer (terrain, grass, soil)
-   - Hardscape Layer (paths, decking, paving)
-   - Water Features Layer (ponds, fountains, streams)
-   - Planting Beds Layer
-   - Plants Layer
-   - Structures Layer (pergolas, sheds, fencing)
-
-2. **Layer Management**
-   - Show/hide layers
-   - Lock/unlock layers
-   - Layer opacity control
-   - Layer grouping
-   - Custom layer creation
-
-### Drawing Tools
-1. **Basic Tools**
-   - Rectangle/Square tool
-   - Circle/Oval tool
-   - Polygon tool for irregular shapes
-   - Path tool for curved elements
-   - Line tool for boundaries
-   - Freehand drawing tool
-
-2. **Advanced Tools**
-   - Spline curves for natural-looking borders
-   - Smart snapping to existing elements
-   - Grid snap functionality
-   - Angle snap for precise alignment
-   - Measurement tools
-
-### Plant Management
-1. **Plant Database**
-   - Comprehensive plant library
-   - Plant specifications:
-     - Mature size (height and spread)
-     - Growing conditions
-     - Seasonal features
-     - Maintenance requirements
-   - Custom plant addition capability
-
-2. **Plant Placement**
-   - Drag-and-drop functionality
-   - Automatic spacing guidelines
-   - Growth simulation
-   - Season visualization
-   - Plant grouping and patterns
-
-### Calculations and Analysis
-1. **Area Calculations**
-   - Total garden area
-   - Individual bed areas
-   - Lawn areas
-   - Hardscape areas
-   - Water feature volumes
-   - Plant coverage areas
-
-2. **Material Calculations**
-   - Soil volume requirements
-   - Mulch coverage
-   - Decking materials
-   - Paving requirements
-   - Edging lengths
-
-### Project Management
-1. **Design Files**
-   - Project saving/loading
-   - Export to common formats (PDF, DXF, PNG)
-   - Design versioning
-   - Template system
-
-2. **Documentation**
-   - Automated plant lists
-   - Material quantities
-   - Cost estimates
-   - Construction notes
-   - Maintenance schedules
-
-## Technical Architecture
-
-### Frontend
-1. **User Interface**
-   - Modern, intuitive design
-   - Responsive layout
-   - Custom toolbars and panels
-   - Layer management sidebar
-   - Property inspector
-   - Mini-map navigation
-
-2. **Canvas Engine**
-   - Vector-based graphics
-   - Infinite canvas with zoom
-   - High-performance rendering
-   - Real-time updates
-
-### Backend
-1. **Data Management**
-   - Project file format
-   - Plant database
-   - User settings storage
-   - Design history
-
-2. **Calculations Engine**
-   - Geometric calculations
-   - Area and volume computations
-   - Material quantity estimation
-   - Cost calculations
-
-### Data Models
-
-```typescript
-interface Layer {
-    id: string;
-    name: string;
-    type: LayerType;
-    visible: boolean;
-    locked: boolean;
-    opacity: number;
-    elements: Element[];
-}
-
-interface Element {
-    id: string;
-    type: ElementType;
-    geometry: Geometry;
-    properties: Properties;
-    style: Style;
-}
-
-interface Plant {
-    id: string;
-    name: string;
-    scientificName: string;
-    mature: {
-        height: number;
-        spread: number;
-    };
-    growingConditions: GrowingConditions;
-    maintenance: MaintenanceRequirements;
-    seasons: SeasonalFeatures;
-}
-
-interface Area {
-    id: string;
-    type: AreaType;
-    geometry: Geometry;
-    calculations: {
-        area: number;
-        perimeter: number;
-        volume?: number;
-    };
-    materials: MaterialRequirements;
-}
-```
-
-## Implementation Phases
-
-### Phase 1: Core Foundation
+## Phase 1: Core Foundation
 - Basic layer system
 - Essential drawing tools
 - Simple area calculations
 - Project saving/loading
 
-### Phase 2: Plant Management
+## Phase 2: Paper Size Implementation
+1. Add paper size selector with standard formats:
+   - A5 (148 × 210 mm) / US Half Letter (5.5 × 8.5 in)
+   - A4 (210 × 297 mm) / US Letter (8.5 × 11 in)
+   - A3 (297 × 420 mm) / US Tabloid (11 × 17 in)
+   - A2 (420 × 594 mm) / US C size (17 × 22 in)
+   - A1 (594 × 841 mm) / US D size (22 × 34 in)
+
+2. Implement canvas scaling:
+   - Dynamic grid adjustment based on paper size
+   - Maintain metric/imperial unit conversion
+   - Zoom controls for detailed work
+
+3. Add print preparation:
+   - Page margins and safe zones
+   - Print preview functionality
+   - Export to PDF with correct dimensions
+
+## Phase 3: Plant Management
 - Plant database integration
 - Plant placement tools
 - Basic growth visualization
 - Plant lists and documentation
 
-### Phase 3: Advanced Features
+## Phase 4: Advanced Features
 - Complex calculations
 - Material estimation
 - Cost analysis
 - Advanced visualization
 - Season changes
 
-### Phase 4: Enhancement
-- Template system
-- Advanced export options
-- Collaboration features
-- Mobile support
+## Phase 5: Drawing Enhancements
+1. Add measurement annotations:
+   - Automatic dimension lines
+   - Area labels with calculations
+   - Scale indicator
+
+2. Implement advanced snapping:
+   - Endpoint snapping
+   - Midpoint snapping
+   - Perpendicular/parallel guides
+
+3. Add shape libraries:
+   - Common garden elements
+   - Standard plant symbols
+   - Hardscape patterns
+
+## Phase 6: Project Management
+1. Add project metadata:
+   - Client information
+   - Project scale
+   - North arrow and orientation
+
+2. Implement layer organization:
+   - Layer groups
+   - Layer templates
+   - Custom layer colors
+
+3. Add collaboration features:
+   - Export/import layer sets
+   - Share project templates
+   - Element libraries
+
+## Implementation Timeline
+- Each phase is designed to be completed in 2-3 weeks
+- Features will be released incrementally
+- Total project timeline: 12-18 weeks
 
 ## Future Considerations
 1. **3D Visualization**

@@ -15,14 +15,24 @@
                 <button id="saveProject">Save to File</button>
                 <input type="file" id="loadProject" accept=".json" style="display: none;">
                 <button id="loadProjectBtn">Load from File</button>
-                <select id="layerSelect">
-                    <option value="ground">Ground Layer</option>
-                    <option value="hardscape">Hardscape Layer</option>
-                    <option value="water">Water Features</option>
-                    <option value="planting">Planting Beds</option>
-                    <option value="plants">Plants</option>
-                    <option value="structures">Structures</option>
-                </select>
+                
+                <div class="layer-controls">
+                    <span id="currentLayerName">Ground Layer</span>
+                    <select id="layerSelect">
+                        <option value="ground">Ground Layer</option>
+                        <option value="hardscape">Hardscape Layer</option>
+                        <option value="water">Water Features</option>
+                        <option value="planting">Planting Beds</option>
+                        <option value="plants">Plants</option>
+                        <option value="structures">Structures</option>
+                    </select>
+                    <button id="layerVisibility" class="icon-button active" title="Toggle Layer Visibility">👁</button>
+                    <div class="opacity-control">
+                        <label>Opacity:</label>
+                        <input type="range" id="layerOpacity" min="0" max="1" step="0.1" value="1">
+                    </div>
+                </div>
+
                 <div class="grid-controls">
                     <button id="toggleGrid">Toggle Grid</button>
                     <button id="toggleSnap">Toggle Snap</button>
@@ -43,6 +53,7 @@
                 <button data-tool="path">Path</button>
                 <button data-tool="line">Line</button>
                 <button data-tool="freehand">Freehand</button>
+                <button data-tool="text">Label</button>
             </div>
             
             <div class="canvas-container">
@@ -53,6 +64,34 @@
                 <h3>Properties</h3>
                 <div id="objectProperties">
                     <!-- Properties will be dynamically populated -->
+                </div>
+                <div class="global-settings">
+                    <h4>Display Settings</h4>
+                    <div class="toggle-control">
+                        <label>Show Labels</label>
+                        <button id="toggleLabels" class="icon-button active" title="Toggle Labels">📝</button>
+                    </div>
+                </div>
+                <div id="shapeProperties">
+                    <h4>Shape Properties</h4>
+                    <div class="color-controls">
+                        <div class="color-picker">
+                            <label>Outline Color:</label>
+                            <input type="color" id="outlineColor">
+                            <div class="alpha-control">
+                                <label>Opacity:</label>
+                                <input type="range" id="outlineAlpha" min="0" max="1" step="0.1" value="1">
+                            </div>
+                        </div>
+                        <div class="color-picker">
+                            <label>Fill Color:</label>
+                            <input type="color" id="fillColor">
+                            <div class="alpha-control">
+                                <label>Opacity:</label>
+                                <input type="range" id="fillAlpha" min="0" max="1" step="0.1" value="1">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="measurements">
                     <h4>Measurements</h4>
