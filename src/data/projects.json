@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": "1733329974638",
+      "name": "Untitled Project",
+      "elements": [
+        {
+          "type": "rectangle",
+          "layer": "ground",
+          "x": 80,
+          "y": 100,
+          "width": 780,
+          "height": 340
+        },
+        {
+          "type": "rectangle",
+          "layer": "ground",
+          "x": 600,
+          "y": 260,
+          "width": 240,
+          "height": 160,
+          "name": "Deck"
+        },
+        {
+          "type": "circle",
+          "layer": "ground",
+          "x": 140,
+          "y": 160,
+          "radius": 44.721359549995796
+        },
+        {
+          "type": "circle",
+          "layer": "ground",
+          "x": 180,
+          "y": 340,
+          "radius": 56.568542494923804
+        }
+      ],
+      "createdAt": "2024-12-04T16:32:54.638Z"
+    }
+  ]
+}

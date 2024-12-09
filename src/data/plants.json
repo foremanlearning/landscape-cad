@@ -1,0 +1,24 @@
+{
+  "plants": [
+    {
+      "id": "1",
+      "name": "English Rose",
+      "scientificName": "Rosa 'English Rose'",
+      "matureHeight": 150,
+      "matureSpread": 90,
+      "growingConditions": {
+        "sunlight": "full sun",
+        "soil": "well-draining",
+        "hardiness": "zones 5-9"
+      },
+      "seasonalFeatures": {
+        "spring": "new growth",
+        "summer": "flowering",
+        "fall": "hips",
+        "winter": "dormant"
+      },
+      "maintenance": "medium",
+      "category": "flowers"
+    }
+  ]
+}

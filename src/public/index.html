@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape CAD</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Landscape CAD</h1>
+            <div class="toolbar">
+                <button id="newProject">New Project</button>
+                <button id="saveProject">Save to File</button>
+                <input type="file" id="loadProject" accept=".json" style="display: none;">
+                <button id="loadProjectBtn">Load from File</button>
+                <select id="layerSelect">
+                    <option value="ground">Ground Layer</option>
+                    <option value="hardscape">Hardscape Layer</option>
+                    <option value="water">Water Features</option>
+                    <option value="planting">Planting Beds</option>
+                    <option value="plants">Plants</option>
+                    <option value="structures">Structures</option>
+                </select>
+                <div class="grid-controls">
+                    <button id="toggleGrid">Toggle Grid</button>
+                    <button id="toggleSnap">Toggle Snap</button>
+                    <div class="grid-size">
+                        <label>Grid Size (px):</label>
+                        <input type="number" id="gridSize" value="20" min="5" max="100" step="5">
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-container">
+            <div class="tools-panel">
+                <button data-tool="select">Select</button>
+                <button data-tool="rectangle">Rectangle</button>
+                <button data-tool="circle">Circle</button>
+                <button data-tool="polygon">Polygon</button>
+                <button data-tool="path">Path</button>
+                <button data-tool="line">Line</button>
+                <button data-tool="freehand">Freehand</button>
+            </div>
+            
+            <div class="canvas-container">
+                <canvas id="mainCanvas"></canvas>
+            </div>
+            
+            <div class="properties-panel">
+                <h3>Properties</h3>
+                <div id="objectProperties">
+                    <!-- Properties will be dynamically populated -->
+                </div>
+                <div id="measurements">
+                    <h4>Measurements</h4>
+                    <div class="scale-settings">
+                        <label>Scale:</label>
+                        <span>20px = 1m</span>
+                    </div>
+                </div>
+                <div id="elementsList">
+                    <h4>Elements</h4>
+                    <ul id="shapeslist">
+                        <!-- Shapes will be dynamically populated -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
